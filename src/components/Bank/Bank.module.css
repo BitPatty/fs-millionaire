@@ -10,12 +10,12 @@
   z-index: 999;
 
   border: 1px solid white;
-  border-radius: 20px;
+  border-radius: 4px;
 }
 
 .grid {
   padding: 20px;
-  font-size: 20px;
+  font-size: 1.2rem;
   font-weight: bold;
   display: grid;
   grid-template-columns: 0 min-content auto max-content;
@@ -70,4 +70,10 @@
   display: block;
   text-align: center;
   margin-bottom: 10px;
+}
+
+@media (max-width: 361px) {
+  .wrapper {
+    border-radius: 0;
+  }
 }
