@@ -1,0 +1,81 @@
+.wrapper {
+  padding: 20px;
+  text-align: center;
+}
+
+.question {
+  display: inline-block;
+}
+
+.question {
+  position: relative;
+  max-width: 1000px;
+  z-index: 99;
+}
+
+.row {
+  padding: 20px;
+  display: flex;
+  position: relative;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+.row:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  border-top: 2px solid #5a5a5a;
+  background: #5a5a5a;
+  width: 100vw;
+  transform: translateY(-1px);
+}
+
+.row .option {
+  width: 100%;
+  max-width: 500px;
+  z-index: 99;
+}
+
+.row .option:first-child {
+  margin-right: 5px;
+}
+
+.row .option:last-child {
+  margin-left: 5px;
+}
+
+.row .option_text {
+  opacity: 0;
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.row .option_0 {
+  animation-delay: 0s;
+}
+
+.row .option_1 {
+  animation-delay: 2s;
+}
+
+.row .option_2 {
+  animation-delay: 4s;
+}
+
+.row .option_3 {
+  animation-delay: 6s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

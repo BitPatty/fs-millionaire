@@ -1,0 +1,16 @@
+.wrapper {
+  display: inline-block;
+  padding: 10px 20px;
+
+  background-color: #161630;
+  color: white;
+
+  border: 1px solid white;
+  border-radius: 10px;
+
+  cursor: pointer;
+}
+
+.wrapper:hover {
+  background-color: #c29509;
+}

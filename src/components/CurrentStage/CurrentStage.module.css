@@ -1,0 +1,14 @@
+.wrapper {
+  position: fixed;
+  padding: 10px 60px;
+  right: 0px;
+  top: 100px;
+
+  color: white;
+  font-size: 24px;
+
+  background-image: url('../../assets/text-background-default.svg');
+  background-size: 200% 100%;
+
+  z-index: 500;
+}

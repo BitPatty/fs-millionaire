@@ -1,0 +1,11 @@
+.wrapper {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+
+  color: white;
+}
+
+.entry {
+  margin-right: 5px;
+}

@@ -1,0 +1,73 @@
+.wrapper {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  color: rgb(231, 124, 36);
+  width: 100%;
+  max-width: 500px;
+  background-color: #161630;
+  z-index: 999;
+
+  border: 1px solid white;
+  border-radius: 20px;
+}
+
+.grid {
+  padding: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  display: grid;
+  grid-template-columns: 0 min-content auto max-content;
+  grid-row-gap: 10px;
+}
+
+.grid div {
+  z-index: 99;
+}
+
+.pricetag {
+  margin-left: 10px;
+}
+
+.milestone {
+  color: rgb(231, 198, 170);
+}
+
+.anchor {
+  position: relative;
+}
+
+.current_stage + div,
+.current_stage + div + div {
+  color: white;
+}
+
+.current_stage::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -2px;
+  width: 480px;
+  height: calc(100% + 4px);
+  border-top: 2px solid #df6d10;
+  background: #df6d10;
+  transform: translateY(-1px);
+  z-index: 1;
+}
+
+.badges span {
+  display: inline-block;
+  border-radius: 50%;
+  background-color: red;
+  width: 30px;
+  text-align: center;
+  color: white;
+  margin-left: 5px;
+}
+
+.menu_wrapper {
+  display: block;
+  text-align: center;
+  margin-bottom: 10px;
+}

@@ -1,0 +1,26 @@
+.wrapper {
+  display: table;
+
+  background-image: url('../../assets/text-background-default.svg');
+  background-size: 100% 100%;
+
+  min-height: 100px;
+  width: 100%;
+
+  text-align: center;
+}
+
+.text {
+  display: table-cell;
+
+  color: white;
+  font-size: 22px;
+  line-height: 200%;
+
+  padding-left: 15%;
+  padding-right: 15%;
+  padding-top: 15px;
+  padding-bottom: 20px;
+
+  vertical-align: middle;
+}

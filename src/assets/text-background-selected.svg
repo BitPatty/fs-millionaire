@@ -1,0 +1,27 @@
+<svg width="594" height="73" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <radialGradient gradientTransform="translate(0.27936422413793105,0) scale(0.41379310344827586,1)" r="1.81395" cy="0.4974" cx="0.47656" spreadMethod="pad" id="svg_5">
+   <stop offset="0" stop-color="#f9f9ff"/>
+   <stop offset="0.96875" stop-color="#060600"/>
+   <stop offset="1" stop-color="#060600"/>
+   <stop offset="1" stop-color="#060600"/>
+  </radialGradient>
+  <radialGradient r="1.5325" cy="0.5" cx="0.5" spreadMethod="pad" id="svg_13">
+   <stop offset="0" stop-opacity="0.99609" stop-color="#ffb600"/>
+   <stop offset="1" stop-opacity="0.99219" stop-color="#5b3d00"/>
+  </radialGradient>
+ </defs>
+ <metadata id="metadata4680">image/svg+xml</metadata>
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="75" width="596" y="-1" x="-1"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <g id="layer1">
+   <g id="g4594">
+    <path fill="url(#svg_13)" stroke="url(#svg_5)" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="4" stroke-dashoffset="15.00472" d="m531.26604,0.39804l-467.76283,0c-23.80302,0 -36.4576,36.10205 -62.53058,36.10196c26.07298,-0.00009 38.72756,36.10196 62.53058,36.10196l467.76283,0c23.80302,0 36.4576,-36.10205 62.53058,-36.10196c-26.07298,0.00009 -38.72756,-36.10196 -62.53058,-36.10196z" id="path4506"/>
+   </g>
+  </g>
+ </g>
+</svg>
