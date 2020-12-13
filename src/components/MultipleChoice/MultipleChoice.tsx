@@ -12,7 +12,6 @@ type Props = {
 
 const MultipleChoice = ({ blinkTimeout = 5000, className, disabled = false }: Props) => {
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
-
   const [correctAnswerIdx, setCorrectAnswerIdx] = useState<number | null>(null);
 
   const handleAnswerClick = (idx: number) => {

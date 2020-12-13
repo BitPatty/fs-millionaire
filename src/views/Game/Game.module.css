@@ -1,0 +1,52 @@
+.quiz {
+  position: fixed;
+  bottom: 100px;
+  left: 0px;
+  right: 0px;
+}
+
+.team_cards {
+  padding: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.team_cards .card {
+  margin-left: 20px;
+  margin-right: 20px;
+
+  width: 370px;
+  max-width: 370px;
+}
+
+.room_closed {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+}
+
+@media (max-width: 1080px) {
+  .row {
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  .score {
+    display: block;
+  }
+
+  .quiz {
+    position: unset;
+  }
+}
+
+@media (max-width: 480px) {
+  .team_cards .card {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,27 @@
+.wrapper {
+  margin-top: 100px;
+  display: block;
+  text-align: center;
+}
+
+.form {
+  display: inline-block;
+  width: 800px;
+  max-width: 100%;
+  text-align: left;
+}
+
+.title {
+  color: white;
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.alignRight {
+  text-align: right;
+}
+
+.submit {
+  margin-top: 20px;
+}

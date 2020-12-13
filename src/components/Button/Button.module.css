@@ -9,8 +9,24 @@
   border-radius: 10px;
 
   cursor: pointer;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
-.wrapper:hover {
+.wrapper.cloaked {
+  cursor: unset;
+}
+
+.wrapper:not(.disabled):not(.cloaked):hover {
   background-color: #c29509;
+}
+
+.wrapper.disabled {
+  cursor: not-allowed;
+  background-color: #a2a2a2;
 }
