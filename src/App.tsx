@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
+import { Redirect, Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 import { TextBackgroundCorrect, TextBackgroundDefault, TextBackgroundSelected } from './assets';
 
-import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
-
-import Helmet from 'react-helmet';
 import Game from './views/Game';
+import Helmet from 'react-helmet';
 import Home from './views/Home';
+import React from 'react';
 
 function App() {
   return (

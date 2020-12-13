@@ -1,6 +1,5 @@
 import styles from './Input.module.css';
 
-import cx from 'classnames';
 type Props = {
   className?: string;
   label?: string;

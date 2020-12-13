@@ -2,7 +2,6 @@ import Button from '../Button';
 import CreateRoomDto from '../../interfaces/create-room-dto.interface';
 import Input from '../Input';
 import styles from './CreateRoomForm.module.css';
-import { useHistory } from 'react-router-dom';
 import { useState } from 'react';
 
 type Props = {
@@ -11,9 +10,6 @@ type Props = {
 
 const CreateRoomForm = ({ onSubmit }: Props) => {
   const [teams, setTeams] = useState(['A-Team']);
-  const [canSubmit, setCanSubmit] = useState(true);
-
-  const history = useHistory();
 
   const handleTeamNameChange = (idx: number, newName: string) => {
     const newTeams = teams;

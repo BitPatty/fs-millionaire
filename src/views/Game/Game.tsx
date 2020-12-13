@@ -15,7 +15,7 @@ import { useParams } from 'react-router-dom';
 function Game() {
   const { id: roomId } = useParams<{ id: string }>();
   const [fetchRoomRequest, setFetchRoomRequest] = useState<any>(() => () => loadRoom(roomId));
-  const { data: room, isLoading, hasError } = useDataHook<RoomInterface>(fetchRoomRequest);
+  const { data: room } = useDataHook<RoomInterface>(fetchRoomRequest);
 
   const [activeTeamIdentifier, setActiveTeamIdentifier] = useState<string | null | undefined>(null);
 
