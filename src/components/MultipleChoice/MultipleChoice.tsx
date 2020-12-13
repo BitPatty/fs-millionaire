@@ -26,9 +26,12 @@ const MultipleChoice = ({ blinkTimeout = 5000, className, disabled = false }: Pr
   };
 
   const renderAnswer = (idx: number) => {
+    const prefix = String.fromCharCode(0x41 + idx);
+
     return (
       <div className={styles.option_wrapper}>
         <Answer
+          content={`${prefix}: lorem ipsum dolor sit`}
           index={idx}
           onClick={handleAnswerClick}
           className={styles.option}

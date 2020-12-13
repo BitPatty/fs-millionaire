@@ -1,10 +1,10 @@
 import React from 'react';
 import cx from 'classnames';
-
 import styles from './Answer.module.css';
 
 type Props = {
   onClick: Function;
+  content: string;
   index: number;
   className?: string;
   textClassName?: string;
@@ -15,6 +15,7 @@ type Props = {
 
 const Answer = ({
   onClick,
+  content,
   index,
   className,
   textClassName,
@@ -39,7 +40,7 @@ const Answer = ({
 
   return (
     <div onClick={() => handleClick()} className={wrapperClasses}>
-      <p className={cx(styles.text, textClassName)}>lorem ipsum dolor sit</p>
+      <p className={cx(styles.text, textClassName)}>{content}</p>
     </div>
   );
 };
