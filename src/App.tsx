@@ -6,6 +6,7 @@ import CurrentStage from './components/CurrentStage';
 import Helmet from 'react-helmet';
 import MenuBar from './components/MenuBar';
 import MultipleChoice from './components/MultipleChoice';
+import TeamCard from './components/TeamCard';
 import styles from './App.module.css';
 
 function App() {
@@ -20,7 +21,13 @@ function App() {
       </Helmet>
       <div className="App">
         <div className={styles.row}>
-          <CurrentStage className={styles.score} price={5000000} />
+          <div className={styles.team_cards}>
+            <TeamCard className={styles.card} />
+            <TeamCard className={styles.card} active={true} />
+            <TeamCard className={styles.card} defeated={true} />
+            <TeamCard className={styles.card} />
+            <TeamCard className={styles.card} defeated={true} />
+          </div>
         </div>
         <div className={styles.row}>
           {bankVisible && <Bank onClose={() => setBankVisible(false)} />}

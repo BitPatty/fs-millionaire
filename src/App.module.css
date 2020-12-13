@@ -5,6 +5,19 @@
   right: 0px;
 }
 
+.team_cards {
+  padding: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.team_cards .card {
+  margin-left: 20px;
+  margin-right: 20px;
+  width: 400px;
+}
+
 @media (max-width: 1080px) {
   .row {
     margin-top: 20px;
@@ -17,5 +30,14 @@
 
   .quiz {
     position: unset;
+  }
+}
+
+@media (max-width: 480px) {
+  .team_cards .card {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+    max-width: 100%;
   }
 }

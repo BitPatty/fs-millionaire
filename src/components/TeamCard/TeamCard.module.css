@@ -1,0 +1,112 @@
+.wrapper {
+  display: table;
+  padding: 15px;
+  width: 100%;
+
+  border-radius: 5px;
+
+  background: #0f2027;
+  background: -webkit-linear-gradient(to right, #2c5364, #203a43, #0f2027);
+  background: linear-gradient(to right, #161630, #161630, #0f2027);
+
+  border: 2px solid;
+  border-image-source: -webkit-linear-gradient(to left, rgb(99, 99, 99), #fff);
+  border-image-source: linear-gradient(to left, rgb(99, 99, 99), #fff);
+  border-image-slice: 1;
+
+  margin-top: 20px;
+}
+
+.wrapper .avatar {
+  width: 30%;
+  display: table-cell;
+  vertical-align: middle;
+
+  background-image: url('https://post.greatist.com/wp-content/uploads/sites/3/2020/02/322868_1100-1100x628.jpg');
+  background-position: center center;
+  background-size: cover;
+
+  border-radius: 50%;
+}
+
+.wrapper .avatar::after {
+  content: '';
+  display: block;
+  padding-bottom: 100%;
+}
+
+.wrapper > div {
+  display: table-cell;
+  vertical-align: top;
+  padding: 20px;
+  color: white;
+}
+
+.team_name {
+  white-space: nowrap;
+  font-size: 2rem;
+  text-overflow: ellipsis;
+}
+
+.score {
+  margin-top: 5px;
+  font-size: 1.5rem;
+}
+
+.wrapper.defeated {
+  position: relative;
+  filter: grayscale(1);
+}
+
+.wrapper.defeated::before,
+.wrapper.defeated::after {
+  position: absolute;
+  content: '';
+  display: block;
+
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+
+  width: 30%;
+  height: 30px;
+  margin: auto;
+
+  background: red;
+
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.wrapper.defeated::after {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.wrapper.active {
+  background: #0f2027;
+  background: -webkit-linear-gradient(to right, #534821, #594e30, #1b404f);
+  background: linear-gradient(to right, #534821, #594e30, #1b4f45);
+
+  border: 2px solid;
+  border-image-source: -webkit-linear-gradient(to left, rgb(255 112 49), #ffbd01);
+  border-image-source: linear-gradient(to left, rgb(255 112 49), #ffbd01);
+  border-image-slice: 1;
+}
+
+@media (max-width: 1080px) {
+  .wrapper:not(.active) {
+    display: none;
+  }
+
+  .team_name {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .wrapper .avatar {
+    display: none;
+  }
+}

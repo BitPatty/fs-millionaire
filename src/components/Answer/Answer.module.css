@@ -8,12 +8,12 @@
   width: 100%;
 
   text-align: left;
-  -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none; /* Safari */
-  -khtml-user-select: none; /* Konqueror HTML */
-  -moz-user-select: none; /* Old versions of Firefox */
-  -ms-user-select: none; /* Internet Explorer/Edge */
-  user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .wrapper:not(.disabled):hover {
@@ -23,17 +23,17 @@
 }
 
 .wrapper.selected.blink {
-  -webkit-animation: blinkSelected 2s; /* Safari 4+ */
-  -moz-animation: blinkSelected 2s; /* Fx 5+ */
-  -o-animation: blinkSelected 2s; /* Opera 12+ */
-  animation: blinkSelected 2s; /* IE 10+, Fx 29+ */
+  -webkit-animation: blinkSelected 2s;
+  -moz-animation: blinkSelected 2s;
+  -o-animation: blinkSelected 2s;
+  animation: blinkSelected 2s;
 }
 
 .wrapper:not(.selected).blink {
-  -webkit-animation: blinkUnselected 2s; /* Safari 4+ */
-  -moz-animation: blinkUnselected 2s; /* Fx 5+ */
-  -o-animation: blinkUnselected 2s; /* Opera 12+ */
-  animation: blinkUnselected 2s; /* IE 10+, Fx 29+ */
+  -webkit-animation: blinkUnselected 2s;
+  -moz-animation: blinkUnselected 2s;
+  -o-animation: blinkUnselected 2s;
+  animation: blinkUnselected 2s;
 }
 
 .wrapper.correct,
