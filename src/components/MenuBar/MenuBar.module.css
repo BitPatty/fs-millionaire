@@ -4,6 +4,7 @@
   left: 10px;
 
   color: white;
+  z-index: 199;
 }
 
 .entry {

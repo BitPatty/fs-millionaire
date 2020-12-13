@@ -12,3 +12,14 @@
 
   z-index: 500;
 }
+
+@media (max-width: 1080px) {
+  .wrapper {
+    position: unset;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    text-align: center;
+  }
+}

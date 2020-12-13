@@ -1,8 +1,21 @@
-@media (min-width: 361px) {
+.quiz {
+  position: fixed;
+  bottom: 200px;
+  left: 0px;
+  right: 0px;
+}
+
+@media (max-width: 1080px) {
+  .row {
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  .score {
+    display: block;
+  }
+
   .quiz {
-    position: fixed;
-    bottom: 200px;
-    left: 0px;
-    right: 0px;
+    position: unset;
   }
 }

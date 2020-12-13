@@ -1,5 +1,5 @@
-import styles from './Question.module.css';
 import cx from 'classnames';
+import styles from './Question.module.css';
 
 type Props = {
   className?: string;

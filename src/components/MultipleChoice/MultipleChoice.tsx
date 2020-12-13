@@ -1,8 +1,6 @@
 import Answer from '../Answer';
-import cx from 'classnames';
-
 import Question from '../Question';
-
+import cx from 'classnames';
 import styles from './MultipleChoice.module.css';
 import { useState } from 'react';
 
@@ -29,22 +27,26 @@ const MultipleChoice = ({ blinkTimeout = 5000, className, disabled = false }: Pr
 
   const renderAnswer = (idx: number) => {
     return (
-      <Answer
-        index={idx}
-        onClick={handleAnswerClick}
-        className={styles.option}
-        textClassName={cx(styles.option_text, styles[`option_${idx}`])}
-        blinkToCorrect={selectedAnswer != null && idx === correctAnswerIdx}
-        selected={selectedAnswer === idx}
-        disabled={disabled || selectedAnswer != null}
-      />
+      <div className={styles.option_wrapper}>
+        <Answer
+          index={idx}
+          onClick={handleAnswerClick}
+          className={styles.option}
+          textClassName={cx(styles.option_text, styles[`option_${idx}`])}
+          blinkToCorrect={selectedAnswer != null && idx === correctAnswerIdx}
+          selected={selectedAnswer === idx}
+          disabled={disabled || selectedAnswer != null}
+        />
+      </div>
     );
   };
 
   return (
     <div className={cx(styles.wrapper, className)}>
       <div className={styles.row}>
-        <Question className={styles.question} />
+        <div className={styles.question_wrapper}>
+          <Question className={styles.question} />
+        </div>
       </div>
       <div className={styles.row}>
         {renderAnswer(0)}

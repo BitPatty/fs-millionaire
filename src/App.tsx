@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
+
 import Bank from './components/Bank';
 import CurrentStage from './components/CurrentStage';
 import MenuBar from './components/MenuBar';
 import MultipleChoice from './components/MultipleChoice';
-
 import styles from './App.module.css';
 
 function App() {
@@ -11,10 +11,16 @@ function App() {
 
   return (
     <div className="App">
-      <CurrentStage price={5000000} />
+      <div className={styles.row}>
+        <CurrentStage className={styles.score} price={5000000} />
+      </div>
+      <div className={styles.row}>
+        {bankVisible && <Bank onClose={() => setBankVisible(false)} />}
+      </div>
+      <div className={styles.row}>
+        <MultipleChoice className={styles.quiz} disabled={bankVisible} />
+      </div>
       <MenuBar onBankClick={() => setBankVisible(true)} />
-      {bankVisible && <Bank onClose={() => setBankVisible(false)} />}
-      <MultipleChoice className={styles.quiz} disabled={bankVisible} />
     </div>
   );
 }
