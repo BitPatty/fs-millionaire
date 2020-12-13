@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { TextBackgroundCorrect, TextBackgroundDefault, TextBackgroundSelected } from './assets';
 
 import Bank from './components/Bank';
-import CurrentStage from './components/CurrentStage';
 import Helmet from 'react-helmet';
 import MenuBar from './components/MenuBar';
 import MultipleChoice from './components/MultipleChoice';
