@@ -15,7 +15,9 @@
 .team_cards .card {
   margin-left: 20px;
   margin-right: 20px;
-  width: 400px;
+
+  width: 300px;
+  max-width: 300px;
 }
 
 @media (max-width: 1080px) {

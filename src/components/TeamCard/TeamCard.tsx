@@ -20,9 +20,9 @@ const TeamCard = ({ className = null, active = false, defeated = false }: Props)
   return (
     <div className={wrapperClasses}>
       <div className={styles.avatar} />
-      <div>
-        <div className={styles.team_name}>Team Name</div>
-        <div className={styles.score}>Score</div>
+      <div className={styles.content}>
+        <div className={styles.team_name}>Team Name 123 123 123 123</div>
+        <div className={styles.score}>€ 1'000'000</div>
       </div>
     </div>
   );

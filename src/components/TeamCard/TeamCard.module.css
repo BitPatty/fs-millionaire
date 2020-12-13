@@ -1,5 +1,6 @@
 .wrapper {
   display: table;
+  table-layout: fixed;
   padding: 15px;
   width: 100%;
 
@@ -42,15 +43,18 @@
   color: white;
 }
 
-.team_name {
+.team_name,
+.score {
+  display: block;
   white-space: nowrap;
-  font-size: 2rem;
+  overflow: hidden;
   text-overflow: ellipsis;
+  font-size: 1.5rem;
 }
 
 .score {
+  font-size: 1.4rem;
   margin-top: 5px;
-  font-size: 1.5rem;
 }
 
 .wrapper.defeated {
@@ -58,7 +62,7 @@
   filter: grayscale(1);
 }
 
-.wrapper.defeated::before,
+/* .wrapper.defeated::before,
 .wrapper.defeated::after {
   position: absolute;
   content: '';
@@ -70,19 +74,20 @@
   bottom: 0;
 
   width: 30%;
-  height: 30px;
+  height: 20px;
   margin: auto;
 
   background: red;
 
   -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg);
+  z-index: 1;
 }
 
 .wrapper.defeated::after {
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
-}
+} */
 
 .wrapper.active {
   background: #0f2027;
@@ -98,10 +103,6 @@
 @media (max-width: 1080px) {
   .wrapper:not(.active) {
     display: none;
-  }
-
-  .team_name {
-    font-size: 1.1rem;
   }
 }
 
