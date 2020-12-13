@@ -2,16 +2,14 @@ import cx from 'classnames';
 import styles from './Question.module.css';
 
 type Props = {
+  text: string;
   className?: string;
 };
 
-const Question = ({ className }: Props) => {
+const Question = ({ className, text }: Props) => {
   return (
     <div className={cx(styles.wrapper, className)}>
-      <p className={styles.text}>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis dolores labore, alias
-        aperiam obcaecati est.
-      </p>
+      <p className={styles.text}>{text}</p>
     </div>
   );
 };

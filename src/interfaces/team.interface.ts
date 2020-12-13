@@ -1,10 +1,18 @@
-import TeamState from './team-state.interface';
-
-interface Team {
-  identifier: string;
+interface TeamInterface {
+  uuid: string;
   name: string;
-  avatarUrl: string;
-  state: TeamState;
+  avatarUrl?: string | null;
+  isDefeated: boolean;
+  hasFinished: boolean;
+  usedHalfJoker: boolean;
+  usedAudienceJoker: boolean;
+  usedSwitchJoker: boolean;
+  usedSearchJoker: boolean;
+  level: {
+    uuid: string;
+    price: number;
+    isCheckpoint: boolean;
+  };
 }
 
-export default Team;
+export default TeamInterface;

@@ -1,28 +1,7 @@
-interface Question {
-  identifier: string;
-  text: string;
-  answers: [
-    {
-      identifier: string;
-      text: string;
-      hidden: boolean;
-    },
-    {
-      identifier: string;
-      text: string;
-      hidden: boolean;
-    },
-    {
-      identifier: string;
-      text: string;
-      hidden: boolean;
-    },
-    {
-      identifier: string;
-      text: string;
-      hidden: boolean;
-    },
-  ];
+interface QuestionInterface {
+  uuid: string;
+  description: string;
+  answers: string[];
 }
 
-export default Question;
+export default QuestionInterface;

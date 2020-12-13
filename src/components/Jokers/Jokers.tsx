@@ -1,57 +1,56 @@
-import cx from 'classnames';
-import Joker from '../../enums/joker.enum';
-import JokerState from '../../interfaces/joker-state.interface';
 import Button from '../Button';
+import Joker from '../../enums/joker.enum';
 import MaterialIcon from '../MaterialIcon';
-
+import TeamInterface from '../../interfaces/team.interface';
+import cx from 'classnames';
 import styles from './Jokers.module.css';
 
 type Props = {
   className?: string | null | undefined;
-  state: JokerState;
+  team: TeamInterface;
   active: boolean;
   onJokerTriggered: (joker: Joker) => void;
 };
 
-const Jokers = ({ active, className = null, state, onJokerTriggered }: Props) => {
+const Jokers = ({ active, className = null, team, onJokerTriggered }: Props) => {
   return (
     <div className={cx(styles.wrapper, className)}>
       <Button
         className={styles.round}
-        disabled={state.search.used}
+        disabled={team.usedSearchJoker}
         cloaked={!active}
         onClick={() => {
-          if (!state.search.used) onJokerTriggered(Joker.SEARCH);
+          if (!team.usedSearchJoker) onJokerTriggered(Joker.SEARCH);
         }}
       >
         <MaterialIcon name="search" />
       </Button>
       <Button
         className={styles.round}
-        disabled={state.audience.used}
+        disabled={team.usedAudienceJoker}
         cloaked={!active}
         onClick={() => {
-          if (!state.audience.used) onJokerTriggered(Joker.AUDIENCE);
+          if (!team.usedAudienceJoker) onJokerTriggered(Joker.AUDIENCE);
         }}
       >
         <MaterialIcon name="people" />
       </Button>
       <Button
         className={styles.round}
-        disabled={state.half.used}
+        disabled={team.usedHalfJoker}
         cloaked={!active}
         onClick={() => {
-          if (!state.half.used) onJokerTriggered(Joker.HALF);
+          if (!team.usedHalfJoker) onJokerTriggered(Joker.HALF);
         }}
       >
         <MaterialIcon name="star_half" />
       </Button>
       <Button
         className={styles.round}
-        disabled={state.switchQuestion.used}
+        disabled={team.usedSwitchJoker}
         cloaked={!active}
         onClick={() => {
-          if (!state.switchQuestion.used) onJokerTriggered(Joker.SWITCH);
+          if (!team.usedSwitchJoker) onJokerTriggered(Joker.SWITCH);
         }}
       >
         <MaterialIcon name="loop" />

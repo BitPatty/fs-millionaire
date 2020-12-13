@@ -1,12 +1,18 @@
-import { useState } from 'react';
 import Button from '../Button';
+import CreateRoomDto from '../../interfaces/create-room-dto.interface';
 import Input from '../Input';
 import styles from './CreateRoomForm.module.css';
-
 import { useHistory } from 'react-router-dom';
-const CreateRoomForm = () => {
+import { useState } from 'react';
+
+type Props = {
+  onSubmit: (payload: CreateRoomDto) => any;
+};
+
+const CreateRoomForm = ({ onSubmit }: Props) => {
   const [teams, setTeams] = useState(['A-Team']);
   const [canSubmit, setCanSubmit] = useState(true);
+
   const history = useHistory();
 
   const handleTeamNameChange = (idx: number, newName: string) => {
@@ -51,7 +57,7 @@ const CreateRoomForm = () => {
           <Button
             label="Raum erstellen"
             disabled={teams.length < 1 || teams.find(t => !t || t.trim().length === 0) != null}
-            onClick={() => history.push('/room/asdf')}
+            onClick={() => onSubmit({ teams: teams.map(t => ({ name: t })) })}
           />
         </div>
       </div>

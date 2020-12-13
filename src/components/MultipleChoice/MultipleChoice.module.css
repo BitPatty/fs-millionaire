@@ -62,19 +62,19 @@
 }
 
 .row .option_0 {
-  animation-delay: 0s;
-}
-
-.row .option_1 {
   animation-delay: 2s;
 }
 
-.row .option_2 {
+.row .option_1 {
   animation-delay: 4s;
 }
 
-.row .option_3 {
+.row .option_2 {
   animation-delay: 6s;
+}
+
+.row .option_3 {
+  animation-delay: 8s;
 }
 
 @keyframes fadeIn {

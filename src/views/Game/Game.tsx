@@ -1,30 +1,51 @@
-import Helmet from 'react-helmet';
-import React, { useState } from 'react';
-// import { useParams } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
 import { TextBackgroundCorrect, TextBackgroundDefault, TextBackgroundSelected } from '../../assets';
+import { applyJoker, loadRoom } from '../../services/apiService';
 
-import MultipleChoice from '../../components/MultipleChoice';
-import TeamCard from '../../components/TeamCard';
+import Helmet from 'react-helmet';
 import Joker from '../../enums/joker.enum';
-
-import generateRoom from '../../mock/generate-room';
-
-import styles from './Game.module.css';
-import RoomState from '../../enums/room-state.enum';
+import MultipleChoice from '../../components/MultipleChoice';
+import RoomInterface from '../../interfaces/room.interface';
+import TeamCard from '../../components/TeamCard';
 import WinnerCard from '../../components/WinnerCard';
+import styles from './Game.module.css';
+import useDataHook from '../../services/useDataHook';
+import { useParams } from 'react-router-dom';
 
 function Game() {
-  const room = generateRoom();
-  // const { id: roomId } = useParams<{ id: string }>();
-  const [activeTeamIdentifier, setActiveTeamIdentifier] = useState<string | null | undefined>(
-    room.activeTeamIdentifier,
-  );
+  const { id: roomId } = useParams<{ id: string }>();
+  const [fetchRoomRequest, setFetchRoomRequest] = useState<any>(() => () => loadRoom(roomId));
+  const { data: room, isLoading, hasError } = useDataHook<RoomInterface>(fetchRoomRequest);
 
-  const onJokerTriggerd = (teamIdentifer: string, joker: Joker) => {
-    // TODO
+  const [activeTeamIdentifier, setActiveTeamIdentifier] = useState<string | null | undefined>(null);
+
+  useEffect(() => {
+    if (room != null) {
+      setActiveTeamIdentifier(room.currentTeam.uuid);
+    }
+  }, [room]);
+
+  const onJokerTriggerd = async (joker: Joker) => {
+    if (!room || room.isFinished) return;
+    await applyJoker(room.uuid, joker);
+    reloadRoom();
   };
 
-  console.log(activeTeamIdentifier);
+  const reloadRoom = () => {
+    setFetchRoomRequest(() => () => loadRoom(roomId));
+  };
+
+  const getWinners = () => {
+    if (!room || !room.isFinished) return [];
+    const wins = room.teams.map(t => t.level.price);
+    const maxWin = Math.max(...wins);
+    return room.teams
+      .filter(t => (t.level.price = maxWin))
+      .map(t => <WinnerCard key={`winner_${t.uuid}`} team={t} />);
+  };
+
+  if (!room) return <div>loading</div>;
+
   return (
     <>
       <Helmet>
@@ -37,23 +58,30 @@ function Game() {
           <div className={styles.team_cards}>
             {room.teams.map(team => (
               <TeamCard
-                key={`team_card_${team.identifier}`}
-                context={team}
+                key={`team_card_${team.uuid}`}
+                team={team}
                 className={styles.card}
-                onJokerTriggered={joker => onJokerTriggerd(team.identifier, joker)}
-                active={activeTeamIdentifier === team.identifier}
+                onJokerTriggered={onJokerTriggerd}
+                active={activeTeamIdentifier === team.uuid}
               />
             ))}
           </div>
         </div>
-        {room.state === RoomState.CLOSED && (
+        {room.isFinished && (
           <div className={styles.room_closed}>
-            <WinnerCard team={room.teams[0]} />
+            <div>Sieger:</div>
+            {getWinners()}
           </div>
         )}
-        {room.state === RoomState.IN_PROGRESS && (
+        {!room.isFinished && (
           <div className={styles.row}>
-            <MultipleChoice className={styles.quiz} />
+            <MultipleChoice
+              removedAnswers={room.hiddenAnswer0 ? [room.hiddenAnswer0, room.hiddenAnswer1] : []}
+              onQuestionAnswered={reloadRoom}
+              roomUuid={room.uuid}
+              className={styles.quiz}
+              question={room.currentQuestion}
+            />
           </div>
         )}
       </div>

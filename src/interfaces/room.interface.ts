@@ -1,11 +1,15 @@
-import RoomState from '../enums/room-state.enum';
-import Team from './team.interface';
+import QuestionInterface from './question.interface';
+import TeamInterface from './team.interface';
 
-interface Room {
-  identifier: string;
-  teams: Team[];
-  state: RoomState;
-  activeTeamIdentifier?: string | null | undefined;
+interface RoomInterface {
+  uuid: string;
+  teams: TeamInterface[];
+  currentTeam: TeamInterface;
+  currentQuestion: QuestionInterface;
+  hiddenAnswer0: string;
+  hiddenAnswer1: string;
+  isFinished: boolean;
+  lastAnswer: string;
 }
 
-export default Room;
+export default RoomInterface;
