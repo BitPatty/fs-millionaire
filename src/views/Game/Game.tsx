@@ -40,7 +40,7 @@ function Game() {
     const wins = room.teams.map(t => t.level.price);
     const maxWin = Math.max(...wins);
     return room.teams
-      .filter(t => (t.level.price = maxWin))
+      .filter(t => t.level.price === maxWin)
       .map(t => <WinnerCard key={`winner_${t.uuid}`} team={t} />);
   };
 

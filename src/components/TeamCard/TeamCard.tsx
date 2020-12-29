@@ -24,7 +24,16 @@ const TeamCard = ({ className = null, active = false, team, onJokerTriggered }: 
 
   return (
     <div className={wrapperClasses}>
-      <div className={styles.avatar} />
+      <div
+        className={styles.avatar}
+        style={
+          team.avatarUrl
+            ? {
+                backgroundImage: `url('${team.avatarUrl}')`,
+              }
+            : {}
+        }
+      />
       <div className={styles.content}>
         <div className={styles.team_name}>{team.name}</div>
         <div className={styles.score}>
